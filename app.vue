@@ -1,3 +1,5 @@
 <template>
-  <div>asd</div>
+  <div>
+    <Toast> This is an auto-imported component. </Toast>
+  </div>
 </template>
