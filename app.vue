@@ -1,5 +1,5 @@
 <template>
   <div>
-    <Toast> This is an auto-imported component. </Toast>
+    <CenterContainer> This is an auto-imported component. </CenterContainer>
   </div>
 </template>
