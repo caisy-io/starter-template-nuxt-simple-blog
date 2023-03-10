@@ -15,7 +15,7 @@
     <label
       v-if="description"
       class="text-gray-400 mt-3 text-center block text-xs"
-      >{description}</label
+      >{{ description }}</label
     >
   </div>
   <slot />
