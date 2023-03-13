@@ -12,6 +12,7 @@
 
 <script setup>
 import ComponentSelector from "./ComponentSelector.vue";
+import Layout from "./Layout.vue";
 const props = defineProps({
   Page: Object,
   Navigation: Object,

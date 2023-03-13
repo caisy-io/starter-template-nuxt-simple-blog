@@ -36,8 +36,8 @@
 <script setup>
 const route = useRoute();
 const { slug } = route.params;
-const props = declareProps({
-  entries,
-  homePage,
+const props = defineProps({
+  entries: [Object],
+  homePage: Object,
 });
 </script>

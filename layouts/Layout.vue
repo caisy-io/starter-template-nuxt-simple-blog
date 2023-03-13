@@ -51,7 +51,7 @@
       <meta name="twitter:card" content="summary_large_image" />
     </head>
     <body>
-      <Toast v-if="process.env.PUBLIC_SHOW_ONBOARDING_TOAST !== 'false'" />
+      <Toast />
       <Navigation
         :entries="navigation.entries"
         :homePage="navigation.homePage"
@@ -65,14 +65,15 @@
 </template>
 
 <script setup>
-import { Footer } from "./Footer.vue";
-import { Navigation } from "./Navigation.vue";
-const props = declareProps({
-  seo,
-  navigation,
-  footer,
+import Footer from "./Footer.vue";
+import Navigation from "./Navigation.vue";
+const props = defineProps({
+  seo: Object,
+  navigation: Object,
+  footer: Object,
 });
 
-const ogImageSrc = seo?.ogImage?.src;
-const ogImageAlt = seo?.ogImage?.description;
+console.log(`navigation: `, props.navigation);
+const ogImageSrc = props.seo?.ogImage?.src;
+const ogImageAlt = props.seo?.ogImage?.description;
 </script>

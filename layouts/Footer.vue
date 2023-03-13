@@ -9,6 +9,8 @@
 <script setup>
 import { RichTextRenderer } from "@caisy/rich-text-vue-renderer";
 const props = defineProps({
-  content,
+  content: {
+    json: Object,
+  },
 });
 </script>
