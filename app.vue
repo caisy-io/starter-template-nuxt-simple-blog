@@ -7,6 +7,5 @@ import Page from "./layouts/Page.vue";
 import { EPageType, getProps } from "~~/services/content/getProps";
 
 const props = await getProps({ pageType: EPageType.Index });
-console.log(`appProps: `, props);
-// if (props.is404) navigateTo("/404");
+if (props.is404) navigateTo("/404");
 </script>

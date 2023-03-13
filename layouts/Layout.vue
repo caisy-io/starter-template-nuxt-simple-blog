@@ -73,9 +73,6 @@ const props = defineProps({
   footer: Object,
 });
 
-console.log("props.navigation: ", props.navigation);
-console.log("props.footer: ", props.footer);
-
 const ogImageSrc = props.seo?.ogImage?.src;
 const ogImageAlt = props.seo?.ogImage?.description;
 </script>
