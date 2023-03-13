@@ -2,8 +2,7 @@ import { GraphQLClient } from "graphql-request";
 import { print } from "graphql";
 import { getSdk as getSdkWithClient, Requester } from "./__generated/sdk";
 
-const requester: Requester<any> = async (doc: any, vars: any) => {
-  console.log(`env: `, useRuntimeConfig());
+export const requester: Requester<any> = async (doc: any, vars: any) => {
   const CAISY_PROJECT_ID = useRuntimeConfig().public.caisyProjectId;
   const CAISY_API_KEY = useRuntimeConfig().public.caisyApiKey;
   const NODE_ENV = useRuntimeConfig().public.nodeEnv;
@@ -29,7 +28,7 @@ const requester: Requester<any> = async (doc: any, vars: any) => {
 
   try {
     const res = await client.request(doc, vars);
-    return res?.data as any;
+    return res as any;
   } catch (err: any) {
     if (NODE_ENV == "development") {
       console.error(

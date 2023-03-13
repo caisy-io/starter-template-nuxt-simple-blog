@@ -1,4 +1,6 @@
-<template><Page v-bind="props" /></template>
+<template>
+  <Page v-bind="props" />
+</template>
 
 <script setup>
 import Page from "./layouts/Page.vue";

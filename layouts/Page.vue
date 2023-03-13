@@ -5,7 +5,7 @@
     :footer="props?.Footer"
   >
     <template v-for="componentType in Page?.components">
-      <ComponentSelector v-if="componentType" :componentType="componentType" />
+      <ComponentSelector :componentType="componentType" />
     </template>
   </Layout>
 </template>

@@ -19,7 +19,9 @@ export const getProps = async ({
 
   if (slug === undefined && pageType == EPageType.Index) {
     const Navigation = (await navigationRequest)?.Navigation;
+    console.log(`Navigation: `, Navigation);
     slug = Navigation?.homePage?.slug ?? undefined;
+    console.log(`slug: `, slug);
   }
   if (slug === undefined && pageType == EPageType.NotFound) {
     const Navigation = (await navigationRequest)?.Navigation;
@@ -48,7 +50,8 @@ export const getProps = async ({
     pageType != EPageType.Blog
       ? (await caisySDK
           .allPageBySlug({ slug })
-          .then((r) => r.allPage?.edges?.[0]?.node)) ?? null
+          .then((r) => r.allPage?.edges?.[0]?.node)
+          .catch((err) => console.log(`err: `, err))) ?? null
       : null;
 
   const Navigation = (await navigationRequest)?.Navigation;

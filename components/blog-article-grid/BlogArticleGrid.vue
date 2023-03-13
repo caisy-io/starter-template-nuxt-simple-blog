@@ -31,5 +31,4 @@ const props = defineProps({
   articles: [Object],
   subheadline: String,
 });
-console.log(props);
 </script>

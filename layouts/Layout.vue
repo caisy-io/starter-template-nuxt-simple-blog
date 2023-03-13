@@ -52,14 +52,14 @@
     </head>
     <body>
       <Toast />
-      <!-- <Navigation
+      <Navigation
         :entries="navigation.entries"
         :homePage="navigation.homePage"
-      /> -->
+      />
       <main>
         <slot />
       </main>
-      <!-- <Footer :content="footer.content" /> -->
+      <Footer :content="footer.content" />
     </body>
   </html>
 </template>
@@ -73,7 +73,9 @@ const props = defineProps({
   footer: Object,
 });
 
-console.log(`navigation: `, props.navigation);
+console.log("props.navigation: ", props.navigation);
+console.log("props.footer: ", props.footer);
+
 const ogImageSrc = props.seo?.ogImage?.src;
 const ogImageAlt = props.seo?.ogImage?.description;
 </script>
