@@ -1,8 +1,10 @@
 <template>
-  <component
-    :is="COMPONENTS[componentType.__typename]"
-    v-bind="componentType"
-  ></component>
+  <template v-if="componentType.__typename">
+    <component
+      :is="getComponent(componentType.__typename)"
+      v-bind="componentType"
+    ></component>
+  </template>
 </template>
 
 <script setup>
@@ -20,6 +22,10 @@ const COMPONENTS = {
   NewsletterSignup,
   FullwidthBlogTeaser,
   ContactForm,
+};
+
+const getComponent = (type) => {
+  return COMPONENTS[type];
 };
 
 const props = defineProps({

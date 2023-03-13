@@ -17,7 +17,7 @@
         <ArticleCard
           v-for="article in articles"
           :teaserHeadline="article.teaserHeadlines"
-          :teaserDesciption="artcile.teaserDescription"
+          :teaserDesciption="article.teaserDescription"
           :teaserImage="article.teaserImage"
         />
       </div>
