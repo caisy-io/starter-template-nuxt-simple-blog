@@ -4,19 +4,17 @@
     :navigation="props?.Navigation"
     :footer="props?.Footer"
   >
-    <ComponentSelector
-      v-for="componentType in Page?.components"
-      v-if="componentType"
-      :componentType="componentType"
-    />
+    <template v-for="componentType in Page?.components">
+      <ComponentSelector v-if="componentType" :componentType="componentType" />
+    </template>
   </Layout>
 </template>
 
 <script setup>
 import ComponentSelector from "./ComponentSelector.vue";
 const props = defineProps({
-  Page,
-  Navigation,
-  Footer,
+  Page: Object,
+  Navigation: Object,
+  Footer: Object,
 });
 </script>

@@ -1,18 +1,18 @@
 <template>
   <CenterContainer>
     <article class="prose lg:prose-xl">
-      <RichtextRenderer
+      <RichTextRenderer
         v-if="text?.json"
         :overwrites="{ documentLink: DocumentLink }"
-        :connections="{text?.connections}"
-        :node="{text?.json}"
+        :connections="text?.connections"
+        :node="text?.json"
       />
     </article>
   </CenterContainer>
 </template>
 
 <script setup>
-import { RichtextRenderer } from "@caisy/rich-text-vue-renderer";
+import { RichTextRenderer } from "@caisy/rich-text-vue-renderer";
 const props = defineProps({
   text: {
     json: Object,

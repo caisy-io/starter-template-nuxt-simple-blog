@@ -2,8 +2,6 @@
 
 export default defineEventHandler((event) => {
   return Response.redirect(
-    `https://app.caisy.io/app/project/home?project_id=${
-      import.meta.env.CAISY_PROJECT_ID
-    }?verify_onboarding=true`
+    `https://app.caisy.io/app/project/home?project_id=${process.env.CAISY_PROJECT_ID}?verify_onboarding=true`
   );
 });

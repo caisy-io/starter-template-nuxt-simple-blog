@@ -51,7 +51,7 @@
       <meta name="twitter:card" content="summary_large_image" />
     </head>
     <body>
-      <Toast v-if="import.meta.env.PUBLIC_SHOW_ONBOARDING_TOAST !== 'false'" />
+      <Toast v-if="process.env.PUBLIC_SHOW_ONBOARDING_TOAST !== 'false'" />
       <Navigation
         :entries="navigation.entries"
         :homePage="navigation.homePage"

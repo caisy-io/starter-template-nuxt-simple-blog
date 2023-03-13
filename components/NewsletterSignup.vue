@@ -9,7 +9,7 @@
           {{ headline }}
         </h2>
         <p
-          v-if="subhea"
+          v-if="subheadline"
           class="max-w-prose text-base text-center text-gray-600"
         >
           {{ subheadline }}

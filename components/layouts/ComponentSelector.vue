@@ -23,6 +23,6 @@ const COMPONENTS = {
 };
 
 const props = defineProps({
-  componentType,
+  componentType: Object,
 });
 </script>
