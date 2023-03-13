@@ -52,7 +52,10 @@
     </head>
     <body>
       <Toast v-if="import.meta.env.PUBLIC_SHOW_ONBOARDING_TOAST !== 'false'" />
-      <Navigation {...navigation} />
+      <Navigation
+        :entries="navigation.entries"
+        :homePage="navigation.homePage"
+      />
       <main>
         <slot />
       </main>
@@ -63,6 +66,7 @@
 
 <script setup>
 import { Footer } from "./Footer.vue";
+import { Navigation } from "./Navigation.vue";
 const props = declareProps({
   seo,
   navigation,
