@@ -52,14 +52,14 @@
     </head>
     <body>
       <Toast />
-      <Navigation
+      <!-- <Navigation
         :entries="navigation.entries"
         :homePage="navigation.homePage"
-      />
+      /> -->
       <main>
         <slot />
       </main>
-      <Footer :content="footer.content" />
+      <!-- <Footer :content="footer.content" /> -->
     </body>
   </html>
 </template>
