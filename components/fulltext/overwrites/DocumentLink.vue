@@ -1,20 +1,21 @@
 <template>
-  <Asset
-    v-for="component in connections"
-    v-if="
-      component?.__typename == 'Asset' &&
-      node?.attrs?.documentId == component.id
-    "
-    :src="component?.src"
-    :description="component?.description"
-  />
+  <template v-for="component in node?.connections">
+    <Asset
+      v-if="
+        component?.__typename == 'Asset' &&
+        node?.attrs?.documentId == component.id
+      "
+      :src="component?.src"
+      :description="component?.description"
+    />
+  </template>
+  <slot />
 </template>
 
 <script setup>
 const props = defineProps({
   node: Object,
-  connections: [Object],
 });
 
-console.log(props.node, props.connections);
+console.log(`node: `, props.node);
 </script>
