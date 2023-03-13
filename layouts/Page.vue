@@ -6,6 +6,7 @@
   >
     <ComponentSelector
       v-for="componentType in Page?.components"
+      v-if="componentType"
       :componentType="componentType"
     />
   </Layout>
