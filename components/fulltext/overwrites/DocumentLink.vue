@@ -15,4 +15,6 @@ const props = defineProps({
   node: Object,
   connections: [Object],
 });
+
+console.log(props.node, props.connections);
 </script>

@@ -3,7 +3,7 @@
     <article class="prose lg:prose-xl">
       <RichTextRenderer
         v-if="text?.json"
-        :overwrites="{ documentLink: DocumentLink }"
+        :blockMap="{ documentLink: DocumentLink }"
         :connections="text?.connections"
         :node="text?.json"
       />
@@ -13,6 +13,7 @@
 
 <script setup>
 import { RichTextRenderer } from "@caisy/rich-text-vue-renderer";
+import DocumentLink from "./overwrites/DocumentLink.vue";
 const props = defineProps({
   text: {
     json: Object,
