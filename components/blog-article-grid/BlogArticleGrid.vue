@@ -26,6 +26,8 @@
 </template>
 
 <script setup>
+import ArticleCard from "./ArticleCard.vue";
+
 const props = defineProps({
   headline: String,
   articles: [Object],

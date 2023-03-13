@@ -55,9 +55,9 @@
 
 <script setup>
 const props = defineProps({
-  teaserHeadline,
-  teaserDesciption,
-  teaserImage,
-  slug,
+  teaserHeadline: String,
+  teaserDesciption: String,
+  teaserImage: Object,
+  slug: String,
 });
 </script>
