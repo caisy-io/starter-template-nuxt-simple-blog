@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "gen": "graphql-codegen -r dotenv/config --config codegen.ts",
+    "gen:watch": "graphql-codegen --watch -r dotenv/config --config codegen.ts"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^3.2.2",
+    "nuxt": "^3.2.3",
+    "@graphql-codegen/client-preset": "^2.1.1",
+    "@graphql-codegen/introspection": "^3.0.1",
+    "@graphql-codegen/typescript-generic-sdk": "^3.1.0",
+    "@tailwindcss/typography": "^0.5.9"
+  },
+  "dependencies": {
+    "@caisy/rich-text-vue-renderer": "^0.2.1",
+    "autoprefixer": "^10.4.13",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.2.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}
