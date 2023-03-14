@@ -10,9 +10,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       caisyProjectId:
-        process.env.CAISY_PROJECT_ID || "b76210be-a043-4989-98df-ecaf6c6e68d8",
+        process.env.CAISY_PROJECT_ID,
       caisyApiKey:
-        process.env.CAISY_API_KEY || "aiYF7O2eIcIfcXe3zi2C0s8ftcsTbkst",
+        process.env.CAISY_API_KEY,
     },
   },
 });
