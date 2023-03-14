@@ -19,4 +19,6 @@ const route = useRoute();
 const { slug } = route.params;
 
 const props = await getProps({ slug, pageType: EPageType.Blog });
+
+if (props.is404) navigateTo("/404");
 </script>
