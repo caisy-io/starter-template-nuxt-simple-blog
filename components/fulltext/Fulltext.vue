@@ -26,6 +26,4 @@ const props = defineProps({
     connections: [Object],
   },
 });
-
-console.log(`props.text: `, props.text);
 </script>
