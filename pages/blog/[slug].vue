@@ -17,7 +17,6 @@ import { EPageType, getProps } from "~~/services/content/getProps";
 
 const route = useRoute();
 const { slug } = route.params;
-console.log(slug);
 
 const props = await getProps({ slug, pageType: EPageType.Blog });
 </script>

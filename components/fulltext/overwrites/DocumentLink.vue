@@ -16,6 +16,4 @@
 const props = defineProps({
   node: Object,
 });
-
-console.log(`node: `, props.node);
 </script>
