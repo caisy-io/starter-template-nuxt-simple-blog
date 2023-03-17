@@ -6,13 +6,14 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/css/main.css"],
-  ssr: false,
   runtimeConfig: {
-    public: {
       caisyProjectId:
         process.env.CAISY_PROJECT_ID,
       caisyApiKey:
         process.env.CAISY_API_KEY,
+    public: {
+      showOnboardingToast:
+      process.env.SHOW_ONBOARDING_TOAST,
     },
   },
 });

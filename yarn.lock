@@ -801,10 +801,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@caisy/rich-text-vue-renderer@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@caisy/rich-text-vue-renderer/-/rich-text-vue-renderer-0.2.1.tgz"
-  integrity sha512-pilc4KQyXYdeiLht9P7mEw0hjOu/ZvxjVQywqZ5S84bsxiY5sEOxsWI9kByzdkhhM4V8aECCI6fn+xqcWv2KMQ==
+"@caisy/rich-text-vue-renderer@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@caisy/rich-text-vue-renderer/-/rich-text-vue-renderer-0.2.6.tgz#7c6b33f2fb6341767630eb10396bd96b4f84e04f"
+  integrity sha512-BGQavRVIb3Z5sYYpQzsD/kh1ODfsuicOtjQyB/ozNmOYu3GOAKFf6PokDa5fPnmIjePXxupZUjQDOKVUCikEJQ==
 
 "@cloudflare/kv-asset-handler@^0.3.0":
   version "0.3.0"

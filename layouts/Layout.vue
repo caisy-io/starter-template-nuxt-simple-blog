@@ -51,7 +51,7 @@
       <meta name="twitter:card" content="summary_large_image" />
     </head>
     <body>
-      <Toast />
+      <Toast v-if="showToast" />
       <Navigation
         :entries="navigation.entries"
         :homePage="navigation.homePage"
@@ -73,6 +73,8 @@ const props = defineProps({
   footer: Object,
 });
 
+const showOnboardingToast = useRuntimeConfig().public.showOnboardingToast;
+const showToast = `${showOnboardingToast}` !== "false";
 const ogImageSrc = props.seo?.ogImage?.src;
 const ogImageAlt = props.seo?.ogImage?.description;
 </script>

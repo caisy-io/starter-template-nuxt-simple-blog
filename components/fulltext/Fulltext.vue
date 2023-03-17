@@ -4,13 +4,8 @@
       <RichTextRenderer
         v-if="text?.json"
         :blockMap="{ documentLink: DocumentLink }"
-        :node="{
-          ...text?.json,
-          content: text.json.content.map((component) => ({
-            ...component,
-            connections: text.connections,
-          })),
-        }"
+        :node="text?.json"
+        :connections="text?.connections"
       />
     </article>
   </CenterContainer>

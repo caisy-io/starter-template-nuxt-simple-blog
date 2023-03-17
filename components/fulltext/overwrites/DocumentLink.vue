@@ -1,5 +1,5 @@
 <template>
-  <template v-for="component in node?.connections">
+  <template v-for="component in connections">
     <Asset
       v-if="
         component?.__typename == 'Asset' &&
@@ -15,5 +15,6 @@
 <script setup>
 const props = defineProps({
   node: Object,
+  connections: Array,
 });
 </script>
