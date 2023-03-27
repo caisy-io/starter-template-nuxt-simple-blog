@@ -1,5 +1,4 @@
-import { getAllBlogArticles } from "./services/content/getAllBlogArticle";
-import { getAllPages } from "./services/content/getAllPages";
+import dynamicRoutes from "./helpers/dynamicRoutes";
 
 export default defineNuxtConfig({
   postcss: {
@@ -8,20 +7,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@funken-studio/sitemap-nuxt-3"],
+  modules: [["@funken-studio/sitemap-nuxt-3", { generateOnBuild: true }]],
   sitemap: {
-    hostname: "http://localhost:3000/",
-    routes: async () => {
-      const [articles, pages] = await Promise.all([
-        getAllBlogArticles({ after: undefined }),
-        getAllPages({ after: undefined }),
-      ]);
-
-      const articleRoutes = articles.map((article) => `/blog/${article.slug}`);
-      const pageRoutes = pages.map((page) => `/${page.slug}`);
-
-      return [...articleRoutes, ...pageRoutes];
-    },
+    hostname: process.env.HOST_NAME || "http://localhost:3000/",
+    routes: dynamicRoutes,
   },
   css: ["~/assets/css/main.css"],
   runtimeConfig: {
