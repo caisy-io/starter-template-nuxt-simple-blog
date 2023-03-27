@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: [["@funken-studio/sitemap-nuxt-3", { generateOnBuild: true }]],
+  modules: ["@nuxtjs/robots", ["@funken-studio/sitemap-nuxt-3"]],
   sitemap: {
     hostname: process.env.HOST_NAME || "http://localhost:3000/",
     routes: dynamicRoutes,
