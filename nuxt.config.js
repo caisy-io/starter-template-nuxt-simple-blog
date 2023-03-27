@@ -1,4 +1,5 @@
 import dynamicRoutes from "./helpers/dynamicRoutes";
+import robotsConfig from "./robots.config";
 
 export default defineNuxtConfig({
   postcss: {
@@ -7,7 +8,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxtjs/robots", ["@funken-studio/sitemap-nuxt-3"]],
+  modules: [
+    ["@nuxtjs/robots", robotsConfig],
+    ["@funken-studio/sitemap-nuxt-3"],
+  ],
   sitemap: {
     hostname: process.env.HOST_NAME || "http://localhost:3000/",
     routes: dynamicRoutes,
