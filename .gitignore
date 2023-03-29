@@ -5,6 +5,8 @@ node_modules
 .cache
 .output
 .env
+.env.*
+!.env.sample
 dist
 .DS_Store
 

@@ -14,13 +14,13 @@ export const config: CodegenConfig = {
     },
   ],
   generates: {
-    "src/services/graphql/__generated/graphql.schema.json": {
+    "services/graphql/__generated/graphql.schema.json": {
       plugins: ["introspection"],
     },
-    "src/services/graphql/__generated/graphql.schema.graphql": {
+    "services/graphql/__generated/graphql.schema.graphql": {
       plugins: ["schema-ast"],
     },
-    "src/services/graphql/__generated/sdk.ts": {
+    "services/graphql/__generated/sdk.ts": {
       documents: [
         "src/services/graphql/**/*.graphql",
         "src/services/graphql/fragments/**/*.ts",

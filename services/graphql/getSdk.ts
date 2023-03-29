@@ -3,10 +3,6 @@ import { print } from "graphql";
 import { getSdk as getSdkWithClient, Requester } from "./__generated/sdk";
 
 export const requester: Requester<any> = async (doc: any, vars: any) => {
-  // const config = useRuntimeConfig();
-  // const CAISY_PROJECT_ID = config.caisyProjectId;
-  // const CAISY_API_KEY = config.caisyApiKey;
-  // const NODE_ENV = config.public.nodeEnv;
   const CAISY_PROJECT_ID = process.env.CAISY_PROJECT_ID;
   const CAISY_API_KEY = process.env.CAISY_API_KEY;
   const NODE_ENV = process.env.NODE_ENV;
