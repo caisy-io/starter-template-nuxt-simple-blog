@@ -49,7 +49,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run gen`       | Regenerates generated types and SDK                      |
 | `npm run gen:watch` | Wachting changes and regenerates generated types and SDK |
 | `npm run build`     | Build your production site to `./dist/`                  |
-| `npm run nuxt ...`  | Run CLI commands like `nuxt start`                       |
+| `npm run preview`   | Preview your production build                            |
+| `npm run nuxt ...`  | Run CLI commands like `nuxt preview`                     |
 
 ## 👀 Want to learn more?
 
