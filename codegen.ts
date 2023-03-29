@@ -22,9 +22,9 @@ export const config: CodegenConfig = {
     },
     "services/graphql/__generated/sdk.ts": {
       documents: [
-        "src/services/graphql/**/*.graphql",
-        "src/services/graphql/fragments/**/*.ts",
-        "src/services/graphql/queries/**/*.ts",
+        "services/graphql/**/*.graphql",
+        "services/graphql/fragments/**/*.ts",
+        "services/graphql/queries/**/*.ts",
       ],
       plugins: [
         "typescript",

@@ -1471,11 +1471,426 @@ export type IGenSeoInformation_Where = {
   titleInternal?: InputMaybe<IGenCaisyField_String_Where>;
 };
 
+export type IGenAssetFragment = { __typename?: 'Asset', title?: string | null, src?: string | null, originType?: string | null, keywords?: string | null, id?: string | null, dominantColor?: string | null, description?: string | null, copyright?: string | null, author?: string | null };
 
+export type IGenAuthorFragment = { __typename?: 'Author', name?: string | null, role?: string | null, id?: string | null, avatar?: (
+    { __typename?: 'Asset' }
+    & IGenAssetFragment
+  ) | null };
+
+export type IGenBlogArticleFragment = { __typename?: 'BlogArticle', teaserHeadline?: string | null, teaserDesciption?: string | null, slug?: string | null, id?: string | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+      { __typename: 'Asset' }
+      & IGenAssetFragment
+    ) | null> | null } | null, teaserImage?: (
+    { __typename?: 'Asset' }
+    & IGenAssetFragment
+  ) | null, seo?: { __typename?: 'SeoInformation', id?: string | null, description?: string | null, keywords?: string | null, title?: string | null, ogImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null } | null };
+
+export type IGenBlogArticleGridFragment = { __typename?: 'BlogArticleGrid', id?: string | null, headline?: string | null, subheadline?: string | null, articles?: Array<{ __typename?: 'BlogArticle', id?: string | null, slug?: string | null, teaserDesciption?: string | null, teaserHeadline?: string | null, teaserImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+        { __typename: 'Asset' }
+        & IGenAssetFragment
+      ) | null> | null } | null } | null> | null };
+
+export type IGenCategoryFragment = { __typename?: 'Category', name?: string | null, id?: string | null };
+
+export type IGenContactFormFragment = { __typename?: 'ContactForm', id?: string | null, headline?: string | null };
+
+export type IGenFulltextFragment = { __typename?: 'Fulltext', id?: string | null, text?: { __typename?: 'Fulltext_text', json?: any | null, connections?: Array<(
+      { __typename: 'Asset' }
+      & IGenAssetFragment
+    ) | null> | null } | null };
+
+export type IGenFullwidthBlogTeaserFragment = { __typename?: 'FullwidthBlogTeaser', id?: string | null, featuredArticle?: { __typename?: 'BlogArticle', id?: string | null, slug?: string | null, teaserHeadline?: string | null, teaserDesciption?: string | null, teaserImage?: (
+      { __typename?: 'Asset' }
+      & IGenAssetFragment
+    ) | null, text?: { __typename?: 'BlogArticle_text', json?: any | null, connections?: Array<(
+        { __typename: 'Asset' }
+        & IGenAssetFragment
+      ) | null> | null } | null, author?: (
+      { __typename?: 'Author' }
+      & IGenAuthorFragment
+    ) | null, category?: (
+      { __typename?: 'Category' }
+      & IGenCategoryFragment
+    ) | null } | null };
+
+export type IGenHeadlineFragment = { __typename?: 'Headline', subheadline?: string | null, id?: string | null, headline?: string | null };
+
+export type IGenNavigationEntryFragment = { __typename?: 'NavigationEntry', id?: string | null, title?: string | null, connection?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null };
+
+export type IGenNewsletterSignupFragment = { __typename?: 'NewsletterSignup', headline?: string | null, subheadline?: string | null, id?: string | null };
+
+export type IGenPageFragment = { __typename?: 'Page', id?: string | null, slug?: string | null, components?: Array<(
+    { __typename: 'BlogArticleGrid' }
+    & IGenBlogArticleGridFragment
+  ) | (
+    { __typename: 'ContactForm' }
+    & IGenContactFormFragment
+  ) | (
+    { __typename: 'Fulltext' }
+    & IGenFulltextFragment
+  ) | (
+    { __typename: 'FullwidthBlogTeaser' }
+    & IGenFullwidthBlogTeaserFragment
+  ) | (
+    { __typename: 'Headline' }
+    & IGenHeadlineFragment
+  ) | (
+    { __typename: 'NewsletterSignup' }
+    & IGenNewsletterSignupFragment
+  ) | null> | null, seo?: { __typename?: 'SeoInformation', title?: string | null, keywords?: string | null, id?: string | null, description?: string | null, ogImage?: { __typename?: 'Asset', id?: string | null } | null } | null };
+
+export type IGenFooterQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IGenFooterQuery = { __typename?: 'Query', Footer?: { __typename?: 'Footer', id?: string | null, content?: { __typename?: 'Footer_content', json?: any | null } | null } | null };
+
+export type IGenNavigationQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IGenNavigationQuery = { __typename?: 'Query', Navigation?: { __typename?: 'Navigation', id?: string | null, homePage?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null, notFoundPage?: { __typename?: 'Page', id?: string | null, slug?: string | null } | null, entries?: Array<(
+      { __typename?: 'NavigationEntry' }
+      & IGenNavigationEntryFragment
+    ) | null> | null } | null };
+
+export type IGenAllBlogArticleBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type IGenAllBlogArticleBySlugQuery = { __typename?: 'Query', allBlogArticle?: { __typename?: 'BlogArticle_Connection', edges?: Array<{ __typename?: 'BlogArticle_ConnectionEdge', node?: (
+        { __typename?: 'BlogArticle' }
+        & IGenBlogArticleFragment
+      ) | null } | null> | null } | null };
+
+export type IGenAllBlogArticleMetaQueryVariables = Exact<{
+  after?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type IGenAllBlogArticleMetaQuery = { __typename?: 'Query', allBlogArticle?: { __typename?: 'BlogArticle_Connection', totalCount?: number | null, pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null, endCursor?: string | null } | null, edges?: Array<{ __typename?: 'BlogArticle_ConnectionEdge', node?: { __typename?: 'BlogArticle', id?: string | null, slug?: string | null, _meta?: { __typename?: 'CaisyDocument_Meta', publishedAt?: any | null } | null } | null } | null> | null } | null };
+
+export type IGenAllPageBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type IGenAllPageBySlugQuery = { __typename?: 'Query', allPage?: { __typename?: 'Page_Connection', edges?: Array<{ __typename?: 'Page_ConnectionEdge', node?: (
+        { __typename?: 'Page' }
+        & IGenPageFragment
+      ) | null } | null> | null } | null };
+
+export type IGenAllPageMetaQueryVariables = Exact<{
+  after?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type IGenAllPageMetaQuery = { __typename?: 'Query', allPage?: { __typename?: 'Page_Connection', totalCount?: number | null, pageInfo?: { __typename?: 'PageInfo', hasNextPage?: boolean | null, endCursor?: string | null } | null, edges?: Array<{ __typename?: 'Page_ConnectionEdge', node?: { __typename?: 'Page', id?: string | null, slug?: string | null, _meta?: { __typename?: 'CaisyDocument_Meta', publishedAt?: any | null } | null } | null } | null> | null } | null };
+
+export const AssetFragmentDoc = gql`
+    fragment Asset on Asset {
+  title
+  src
+  originType
+  keywords
+  id
+  dominantColor
+  description
+  copyright
+  author
+}
+    `;
+export const BlogArticleFragmentDoc = gql`
+    fragment BlogArticle on BlogArticle {
+  text {
+    connections {
+      __typename
+      ...Asset
+    }
+    json
+  }
+  teaserImage {
+    ...Asset
+  }
+  teaserHeadline
+  teaserDesciption
+  slug
+  seo {
+    id
+    description
+    keywords
+    ogImage {
+      ...Asset
+    }
+    title
+  }
+  id
+}
+    `;
+export const NavigationEntryFragmentDoc = gql`
+    fragment NavigationEntry on NavigationEntry {
+  id
+  title
+  connection {
+    id
+    slug
+  }
+}
+    `;
+export const ContactFormFragmentDoc = gql`
+    fragment ContactForm on ContactForm {
+  id
+  headline
+}
+    `;
+export const BlogArticleGridFragmentDoc = gql`
+    fragment BlogArticleGrid on BlogArticleGrid {
+  id
+  headline
+  subheadline
+  articles {
+    ... on BlogArticle {
+      id
+      slug
+      teaserDesciption
+      teaserHeadline
+      teaserImage {
+        ...Asset
+      }
+      text {
+        connections {
+          __typename
+          ...Asset
+        }
+        json
+      }
+    }
+  }
+}
+    `;
+export const NewsletterSignupFragmentDoc = gql`
+    fragment NewsletterSignup on NewsletterSignup {
+  headline
+  subheadline
+  id
+}
+    `;
+export const AuthorFragmentDoc = gql`
+    fragment Author on Author {
+  name
+  role
+  avatar {
+    ...Asset
+  }
+  id
+}
+    `;
+export const CategoryFragmentDoc = gql`
+    fragment Category on Category {
+  name
+  id
+}
+    `;
+export const FullwidthBlogTeaserFragmentDoc = gql`
+    fragment FullwidthBlogTeaser on FullwidthBlogTeaser {
+  id
+  featuredArticle {
+    id
+    slug
+    teaserImage {
+      ...Asset
+    }
+    text {
+      connections {
+        __typename
+        ... on Asset {
+          ...Asset
+        }
+      }
+      json
+    }
+    author {
+      ...Author
+    }
+    category {
+      ...Category
+    }
+    teaserHeadline
+    teaserDesciption
+  }
+  id
+}
+    `;
+export const HeadlineFragmentDoc = gql`
+    fragment Headline on Headline {
+  subheadline
+  id
+  headline
+}
+    `;
+export const FulltextFragmentDoc = gql`
+    fragment Fulltext on Fulltext {
+  text {
+    json
+    connections {
+      __typename
+      ...Asset
+    }
+  }
+  id
+}
+    `;
+export const PageFragmentDoc = gql`
+    fragment Page on Page {
+  components {
+    __typename
+    ...ContactForm
+    ...BlogArticleGrid
+    ...NewsletterSignup
+    ...FullwidthBlogTeaser
+    ...Headline
+    ...Fulltext
+  }
+  id
+  seo {
+    title
+    ogImage {
+      id
+    }
+    keywords
+    id
+    description
+  }
+  slug
+}
+    `;
+export const FooterDocument = gql`
+    query Footer {
+  Footer {
+    id
+    content {
+      json
+    }
+  }
+}
+    `;
+export const NavigationDocument = gql`
+    query Navigation {
+  Navigation {
+    id
+    homePage {
+      id
+      slug
+    }
+    notFoundPage {
+      id
+      slug
+    }
+    entries {
+      ...NavigationEntry
+    }
+  }
+}
+    ${NavigationEntryFragmentDoc}`;
+export const AllBlogArticleBySlugDocument = gql`
+    query allBlogArticleBySlug($slug: String!) {
+  allBlogArticle(where: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        ...BlogArticle
+      }
+    }
+  }
+}
+    ${BlogArticleFragmentDoc}
+${AssetFragmentDoc}`;
+export const AllBlogArticleMetaDocument = gql`
+    query allBlogArticleMeta($after: String) {
+  allBlogArticle(after: $after) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        _meta {
+          publishedAt
+        }
+        id
+        slug
+      }
+    }
+  }
+}
+    `;
+export const AllPageBySlugDocument = gql`
+    query allPageBySlug($slug: String!) {
+  allPage(where: {slug: {eq: $slug}}) {
+    edges {
+      node {
+        ...Page
+      }
+    }
+  }
+}
+    ${PageFragmentDoc}
+${ContactFormFragmentDoc}
+${BlogArticleGridFragmentDoc}
+${AssetFragmentDoc}
+${NewsletterSignupFragmentDoc}
+${FullwidthBlogTeaserFragmentDoc}
+${AuthorFragmentDoc}
+${CategoryFragmentDoc}
+${HeadlineFragmentDoc}
+${FulltextFragmentDoc}`;
+export const AllPageMetaDocument = gql`
+    query allPageMeta($after: String) {
+  allPage(after: $after) {
+    totalCount
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      node {
+        _meta {
+          publishedAt
+        }
+        id
+        slug
+      }
+    }
+  }
+}
+    `;
 export type Requester<C = {}, E = unknown> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R> | AsyncIterable<R>
 export function getSdk<C, E>(requester: Requester<C, E>) {
   return {
-
+    Footer(variables?: IGenFooterQueryVariables, options?: C): Promise<IGenFooterQuery> {
+      return requester<IGenFooterQuery, IGenFooterQueryVariables>(FooterDocument, variables, options) as Promise<IGenFooterQuery>;
+    },
+    Navigation(variables?: IGenNavigationQueryVariables, options?: C): Promise<IGenNavigationQuery> {
+      return requester<IGenNavigationQuery, IGenNavigationQueryVariables>(NavigationDocument, variables, options) as Promise<IGenNavigationQuery>;
+    },
+    allBlogArticleBySlug(variables: IGenAllBlogArticleBySlugQueryVariables, options?: C): Promise<IGenAllBlogArticleBySlugQuery> {
+      return requester<IGenAllBlogArticleBySlugQuery, IGenAllBlogArticleBySlugQueryVariables>(AllBlogArticleBySlugDocument, variables, options) as Promise<IGenAllBlogArticleBySlugQuery>;
+    },
+    allBlogArticleMeta(variables?: IGenAllBlogArticleMetaQueryVariables, options?: C): Promise<IGenAllBlogArticleMetaQuery> {
+      return requester<IGenAllBlogArticleMetaQuery, IGenAllBlogArticleMetaQueryVariables>(AllBlogArticleMetaDocument, variables, options) as Promise<IGenAllBlogArticleMetaQuery>;
+    },
+    allPageBySlug(variables: IGenAllPageBySlugQueryVariables, options?: C): Promise<IGenAllPageBySlugQuery> {
+      return requester<IGenAllPageBySlugQuery, IGenAllPageBySlugQueryVariables>(AllPageBySlugDocument, variables, options) as Promise<IGenAllPageBySlugQuery>;
+    },
+    allPageMeta(variables?: IGenAllPageMetaQueryVariables, options?: C): Promise<IGenAllPageMetaQuery> {
+      return requester<IGenAllPageMetaQuery, IGenAllPageMetaQueryVariables>(AllPageMetaDocument, variables, options) as Promise<IGenAllPageMetaQuery>;
+    }
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;
