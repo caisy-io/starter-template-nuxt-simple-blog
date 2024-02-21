@@ -18,7 +18,7 @@ import { EPageType, getProps } from "~~/services/content/getProps";
 const route = useRoute();
 const { slug } = route.params;
 
-const props = await getProps({ slug, pageType: EPageType.Blog });
+const { data: props } = await useAsyncData(`blog ${slug}`, () => getProps({ slug, pageType: EPageType.Blog }));
 
 if (props.is404) navigateTo("/404");
 </script>

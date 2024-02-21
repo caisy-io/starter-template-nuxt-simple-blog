@@ -6,5 +6,5 @@
 import { EPageType, getProps } from "~~/services/content/getProps";
 import Page from "~~/layouts/Page.vue";
 
-const props = await getProps({ pageType: EPageType.NotFound });
+const { data: props } = await useAsyncData("404", () => getProps({ pageType: EPageType.NotFound }));
 </script>
