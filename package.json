@@ -15,7 +15,9 @@
     "@graphql-codegen/introspection": "^3.0.1",
     "@graphql-codegen/typescript-generic-sdk": "^3.1.0",
     "@tailwindcss/typography": "^0.5.9",
-    "nuxt": "^3.2.3"
+    "nuxt": "^3.10.2",
+    "vue": "^3.4.19",
+    "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@caisy/rich-text-vue-renderer": "^0.2.6",
