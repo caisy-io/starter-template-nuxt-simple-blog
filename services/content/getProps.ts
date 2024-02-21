@@ -16,6 +16,8 @@ export const getProps = async ({
 }) => {
   const navigationRequest = caisySDK.Navigation();
   const footerRequest = caisySDK.Footer();
+  const Navigation = (await navigationRequest)?.Navigation;
+  const Footer = (await footerRequest)?.Footer;
 
   if (slug === undefined && pageType == EPageType.Index) {
     const Navigation = (await navigationRequest)?.Navigation;
@@ -29,8 +31,8 @@ export const getProps = async ({
   if (slug === undefined) {
     return {
       is404: true,
-      Navigation: (await navigationRequest)?.Navigation,
-      Footer: (await footerRequest)?.Footer,
+      Navigation,
+      Footer,
       BlogArticle: null,
       Page: null,
     };
@@ -51,7 +53,6 @@ export const getProps = async ({
           .catch((err) => console.log(`err: `, err))) ?? null
       : null;
 
-  const Navigation = (await navigationRequest)?.Navigation;
 
   const redirectHome = Page?.slug === Navigation?.homePage?.slug;
 
@@ -59,7 +60,7 @@ export const getProps = async ({
     redirectHome,
     is404: BlogArticle === null && Page === null,
     Navigation,
-    Footer: (await footerRequest)?.Footer,
+    Footer,
     BlogArticle,
     Page,
   };

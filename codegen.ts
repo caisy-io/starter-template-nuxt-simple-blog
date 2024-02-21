@@ -1,11 +1,11 @@
-import { CodegenConfig } from "@graphql-codegen/cli";
+import { type CodegenConfig } from "@graphql-codegen/cli";
 
 export const config: CodegenConfig = {
   overwrite: true,
   ignoreNoDocuments: true,
   schema: [
     {
-      [`https://cloud.caisy.io/api/v3/e/${process.env.CAISY_PROJECT_ID}/graphql` ||
+      [`https://cloud.caisy.io/api/e/v4/${process.env.CAISY_PROJECT_ID}/graphql` ||
       ""]: {
         headers: {
           "x-caisy-apikey": `${process.env.CAISY_API_KEY}`,
